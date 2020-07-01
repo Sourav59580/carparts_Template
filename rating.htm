@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <style>
+        .checked {
+            color: orange;
+        }
+        
+        .cursor-pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="p-4 bg-light">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div style="width: 300px; height:400px;box-shadow:0px 0px 4px 2px #ccc;" class="p-2 bg-white">
+            <img src="https://blogmarch.com/wp-content/uploads/2020/07/star-rating-system-scaled.jpg" alt="" class="w-100 rounded mb-2">
+            <h4>Customer Rating</h4>
+            <div class="rating-container">
+                <span class='fa fa-star-o rater cursor-pointer r1' rate='1'></span>
+                <span class='fa fa-star-o rater cursor-pointer r2' rate='2'></span>
+                <span class='fa fa-star-o rater cursor-pointer r3' rate='3'></span>
+                <span class='fa fa-star-o rater cursor-pointer r4' rate='4'></span>
+                <span class='fa fa-star-o rater cursor-pointer r5' rate='5'></span>
+            </div>
+            <h6 class="text my-2"></h6>
+            <img src="https://blogmarch.com/wp-content/uploads/2020/07/star-rating-icon.png" class="w-100 mt-2">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".rater").each(function() {
+                $(this).click(function() {
+                    $(".rater").removeClass("fa-star checked");
+                    $(".rater").addClass("fa-star-o");
+                    var rating = $(this).attr("rate");
+                    if (rating == 5) {
+                        $(".r1 ").removeClass("fa-star-o");
+                        $(".r1 ").addClass("fa-star checked");
+                        $(".r2 ").removeClass("fa-star-o");
+                        $(".r2 ").addClass("fa-star checked");
+                        $(".r3 ").removeClass("fa-star-o");
+                        $(".r3 ").addClass("fa-star checked");
+                        $(".r4 ").removeClass("fa-star-o");
+                        $(".r4 ").addClass("fa-star checked");
+                        $(".r5 ").removeClass("fa-star-o");
+                        $(".r5 ").addClass("fa-star checked");
+                        $(".text ").html(rating +
+                            " : <span style='color:#FF8C00'>Excellent</span>");
+
+                    }
+                    if (rating == 4) {
+                        $(".r1 ").removeClass("fa-star-o ");
+                        $(".r1 ").addClass("fa-star checked ");
+                        $(".r2 ").removeClass("fa-star-o ");
+                        $(".r2 ").addClass("fa-star checked ");
+                        $(".r3 ").removeClass("fa-star-o ");
+                        $(".r3 ").addClass("fa-star checked ");
+                        $(".r4 ").removeClass("fa-star-o ");
+                        $(".r4 ").addClass("fa-star checked ");
+                        $(".text ").html(rating +
+                            " : <span style='color:#47D700'>Great</span>");
+                    }
+                    if (rating == 3) {
+                        $(".r1 ").removeClass("fa-star-o ");
+                        $(".r1 ").addClass("fa-star checked ");
+                        $(".r2 ").removeClass("fa-star-o ");
+                        $(".r2 ").addClass("fa-star checked ");
+                        $(".r3 ").removeClass("fa-star-o ");
+                        $(".r3 ").addClass("fa-star checked ");
+                        $(".text ").html(rating + " : <span style='color:#00BAFB'>Good</span>");
+                    }
+                    if (rating == 2) {
+                        $(".r1 ").removeClass("fa-star-o ");
+                        $(".r1 ").addClass("fa-star checked ");
+                        $(".r2 ").removeClass("fa-star-o ");
+                        $(".r2 ").addClass("fa-star checked ");
+                        $(".text ").html(rating +
+                            " : <span style='color:#A548F0'>Decent</span>");
+                    }
+                    if (rating == 1) {
+                        $(".r1 ").removeClass("fa-star-o ");
+                        $(".r1 ").addClass("fa-star checked ");
+                        $(".text ").html(rating + " : <span style='color:#FA2A4F'>Bad</span>");
+                    }
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
